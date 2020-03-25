@@ -4,6 +4,7 @@ import Contact from './Contact'
 
 const ContactList = ({todos: contacts, toggleTodo: toggleContact}) => (
     <ul>
+        <h1>Contacts</h1>
         {contacts.map(contact => (
             <Contact key={contact.id} {...contact} onClick={() => toggleContact(contact.id)}/>
         ))}

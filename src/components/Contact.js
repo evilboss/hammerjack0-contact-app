@@ -1,25 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {Accordion, Card, Button} from "react-bootstrap";
 
 const Contact = ({onClick, completed, name, address, email}) => (
+    <Accordion defaultActiveKey="0">
+        <Card>
+            <Card.Header>
+                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                    {name}
+                </Accordion.Toggle>
+            </Card.Header>
+            <Accordion.Collapse eventKey="0">
+                <Card.Body>
+                    <Card.Title>email : {email}</Card.Title>
+                    <Card.Text>
+                        Address: {address}
+                    </Card.Text>
 
-    <li
-        onClick={onClick}
-        style={{
-            textDecoration: completed ? 'line-through' : 'none'
-        }}
-    >
-        <div>
+                </Card.Body>
 
-            {name}
+            </Accordion.Collapse>
+        </Card>
+    </Accordion>
 
-        </div>
-        <div>
-            {address}
-
-        </div>
-        {email}
-    </li>
 );
 
 Contact.propTypes = {
