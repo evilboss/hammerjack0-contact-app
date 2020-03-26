@@ -22,7 +22,7 @@ const Contact = ({dispatch, onClick, completed, name, address, email, id}) => (
             </Card.Header>
             <Accordion.Collapse eventKey="0">
                 <Card.Body>
-                    <Card.Text>email : {email}</Card.Text>
+                    <Card.Text>Email : {email}</Card.Text>
                     <Card.Text>
                         Address: {address}
                     </Card.Text>
