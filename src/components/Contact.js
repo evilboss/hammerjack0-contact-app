@@ -59,7 +59,7 @@ const Contact = ({dispatch, onClick, completed, name, address, email, id}) => {
                 </Card.Header>
                 <Accordion.Collapse eventKey="0">
                     <Card.Body>
-                        <Card.Text>Email : {editEmail ?
+                        <Card.Text><Badge variant="primary">Email</Badge> : {editEmail ?
                             <Form.Control type="text" placeholder={email} onKeyPress={(event) => {
                                 console.log('keypress', event.key);
                                 if (event.key === 'Enter') {
@@ -75,14 +75,13 @@ const Contact = ({dispatch, onClick, completed, name, address, email, id}) => {
                             }} title="Add email"/></span>}
 
                         </Card.Text>
-                        <Card.Text>Address : {editAddress ?
+                        <Card.Text><Badge variant="primary">Address</Badge> : {editAddress ?
                             <Form.Control type="text" placeholder={address} onKeyPress={(event) => {
                                 console.log('keypress', event.key);
                                 if (event.key === 'Enter') {
                                     generateContact();
 
                                 }
-                                //
                             }}
                                           ref={node => (addressRef = node)}
 
@@ -92,9 +91,6 @@ const Contact = ({dispatch, onClick, completed, name, address, email, id}) => {
                             }} title="edit Address"/></span>}
 
                         </Card.Text>
-                        <Button onClick={() => {
-                            console.log('update');
-                        }}>Update contact</Button>
 
                     </Card.Body>
 
