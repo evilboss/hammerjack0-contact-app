@@ -31,7 +31,7 @@ const Contact = ({dispatch, onClick, completed, name, address, email, id}) => {
                 <Card.Header>
 
                     Contact Name: {editName ?
-                    <Form.Control className="name-input" type="text" placeholder={name} onKeyPress={(event) => {
+                    <Form.Control className="name-input" type="text" defaultValue={name} onKeyPress={(event) => {
                         if (event.key === 'Enter') {
                             generateContact();
 
@@ -60,7 +60,7 @@ const Contact = ({dispatch, onClick, completed, name, address, email, id}) => {
                 <Accordion.Collapse eventKey="0">
                     <Card.Body>
                         <Card.Text><Badge variant="primary">Email</Badge> : {editEmail ?
-                            <Form.Control type="text" placeholder={email} onKeyPress={(event) => {
+                            <Form.Control type="email" defaultValue={email} onKeyPress={(event) => {
                                 console.log('keypress', event.key);
                                 if (event.key === 'Enter') {
                                     generateContact();
@@ -76,7 +76,7 @@ const Contact = ({dispatch, onClick, completed, name, address, email, id}) => {
 
                         </Card.Text>
                         <Card.Text><Badge variant="primary">Address</Badge> : {editAddress ?
-                            <Form.Control type="text" placeholder={address} onKeyPress={(event) => {
+                            <Form.Control type="text" defaultValue={address} onKeyPress={(event) => {
                                 console.log('keypress', event.key);
                                 if (event.key === 'Enter') {
                                     generateContact();
