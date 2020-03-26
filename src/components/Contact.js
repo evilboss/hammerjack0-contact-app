@@ -12,23 +12,20 @@ const Contact = ({dispatch, onClick, completed, name, address, email, id}) => (
                 <Accordion.Toggle as={Button} variant="link" eventKey="0">
                     {name}
                 </Accordion.Toggle>
+                <i 
+                onClick={() => {
+                    dispatch(deleteContact(id));
+                    console.log('delete');
+                }}
+                class="fas fa-trash" 
+                title="Delete Contact" />
             </Card.Header>
             <Accordion.Collapse eventKey="0">
                 <Card.Body>
-                    <Card.Title>email : {email}</Card.Title>
+                    <Card.Text>email : {email}</Card.Text>
                     <Card.Text>
                         Address: {address}
                     </Card.Text>
-                    <Card>
-                        <Card.Footer>
-
-                            <Button onClick={() => {
-                                dispatch(deleteContact(id));
-                                console.log('delete');
-                            }}>Delete contact</Button>
-                        </Card.Footer>
-
-                    </Card>
 
                 </Card.Body>
 

@@ -5,7 +5,7 @@ import {Card} from "react-bootstrap";
 
 const ContactList = ({contacts: contacts, toggleContact: toggleContact}) => (
 
-    <Card>
+    <Card className="contacts">
         <Card.Body>
             <Card.Title>Contacts</Card.Title>
             {contacts.map(contact => (
