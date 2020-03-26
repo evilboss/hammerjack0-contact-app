@@ -20,7 +20,7 @@
 }
 .card-header .fas{
     position: absolute;
-    right: 16px;
+    right: 20px;
     font-size: 16px;
     top: 50%;
     margin-top: -8px;
@@ -61,6 +61,19 @@
     cursor: pointer;
     display: none;
 }
-.contacts .card-text .fa-pen:hover{
+.contacts .fa-pen:hover{
     color: #00bc8c;
 }
+.card-header .fa-trash{right: 55px; top: 22px;}
+.contacts .name-input{
+    margin-top: 20px;
+}
+.card-header .edit-name .fas{
+    position: static;
+    margin-left: 10px;
+    color: #aaa;
+    cursor: pointer;
+    display: none;
+}
+.card-header .edit-name .fas:hover{color: #00bc8c;}
+.contacts .card-header:hover .fa-pen{display: inline-block;}

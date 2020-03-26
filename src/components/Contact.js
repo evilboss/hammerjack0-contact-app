@@ -31,7 +31,7 @@ const Contact = ({dispatch, onClick, completed, name, address, email, id}) => {
                 <Card.Header>
 
                     Contact Name: {editName ?
-                    <Form.Control type="text" placeholder={name} onKeyPress={(event) => {
+                    <Form.Control className="name-input" type="text" placeholder={name} onKeyPress={(event) => {
                         if (event.key === 'Enter') {
                             generateContact();
 
@@ -41,19 +41,14 @@ const Contact = ({dispatch, onClick, completed, name, address, email, id}) => {
                                   ref={node => (nameRef = node)}
 
                     />
-                    : <span>{name} <i class="fas fa-pen" onClick={() => {
+                    : <span className="edit-name">{name} <i class="fas fa-pen" onClick={() => {
                         setEditName(true);
                     }} title="Add name"/></span>}
 
-
-                    <span className="action"
-                          onClick={() => {
-                              dispatch(deleteContact(id));
-                              console.log('delete');
-                          }}>
-                        <i className="fas fa-trash" title="Delete Contact"/>
-
-                    </span>
+                        <i onClick={() => {
+                            dispatch(deleteContact(id));
+                            console.log('delete');
+                        }} className="fas fa-trash" title="Delete Contact"/>
                     <Accordion.Toggle as={Button} variant="link" eventKey="0" onClick={() => {
                         console.log('click');
                         setOpen(!open)
