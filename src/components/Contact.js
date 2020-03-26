@@ -19,17 +19,21 @@ const Contact = ({dispatch, onClick, completed, name, address, email, id}) => (
                     <Card.Text>
                         Address: {address}
                     </Card.Text>
+                    <Card>
+                        <Card.Footer>
+
+                            <Button onClick={() => {
+                                dispatch(deleteContact(id));
+                                console.log('delete');
+                            }}>Delete contact</Button>
+                        </Card.Footer>
+
+                    </Card>
 
                 </Card.Body>
 
 
             </Accordion.Collapse>
-            <Card.Footer>
-                <Button onClick={() => {
-                    dispatch(deleteContact(id));
-                    console.log('delete');
-                }}>Delete contact</Button>
-            </Card.Footer>
         </Card>
     </Accordion>
 
