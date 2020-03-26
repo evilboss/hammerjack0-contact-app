@@ -10,10 +10,9 @@ const Contact = ({dispatch, onClick, completed, name, address, email, id}) => {
     let [editName, setEditName] = useState(false);
     let [editEmail, setEditEmail] = useState(false);
     const updateContact = (event) => {
-        console.log('event fire', event);
-        if (event.key === 'Enter') {
-            console.log('update contact');
-        }
+        console.log('update contact');
+        setEditEmail(false);
+        setEditName(false);
 
     };
     return (
@@ -43,8 +42,7 @@ const Contact = ({dispatch, onClick, completed, name, address, email, id}) => {
                 <Accordion.Collapse eventKey="0">
                     <Card.Body>
                         <Card.Text>Email : {editEmail ?
-                            <Form.Control type="text" placeholder={email} onKeypress={(e) => {
-                                console.log('keypress fire',e);
+                            <Form.Control type="text" placeholder={email} onBlur={(e) => {
                                 updateContact(e);
                             }}/>
                             : <span onDoubleClick={() => {
