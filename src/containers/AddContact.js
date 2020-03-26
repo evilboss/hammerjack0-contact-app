@@ -33,22 +33,26 @@ const AddContact = ({dispatch}) => {
                                 />
                             </Form.Group>
 
+
+                        </Form.Row>
+                        <Form.Row>
                             <Form.Group as={Col} controlId="formGridEmail">
                                 <Form.Label>Email</Form.Label>
                                 <Form.Control ref={node => (email = node)} type="email" placeholder="Enter email"/>
                             </Form.Group>
-
                         </Form.Row>
 
                         <Form.Group controlId="formGridAddress1">
                             <Form.Label>Address</Form.Label>
-                            <Form.Control ref={node => (address = node)} placeholder="1234 Main St"/>
+                            <Form.Control ref={node => (address = node)} placeholder="Enter Address"/>
                         </Form.Group>
+                        <Form.Row>
+                            <Button variant="primary" type="submit">
+                                ADD CONTACT
+                            </Button>
+                        </Form.Row>
 
 
-                        <Button variant="primary" type="submit">
-                            ADD CONTACT
-                        </Button>
                     </Form>
 
 
