@@ -1,8 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Accordion, Card, Button} from "react-bootstrap";
+import {connect} from 'react-redux'
 
-const Contact = ({onClick, completed, name, address, email}) => (
+import {Accordion, Card, Button} from "react-bootstrap";
+import {deleteContact} from '../actions'
+
+const Contact = ({dispatch, onClick, completed, name, address, email, id}) => (
     <Accordion defaultActiveKey="0">
         <Card>
             <Card.Header>
@@ -19,7 +22,14 @@ const Contact = ({onClick, completed, name, address, email}) => (
 
                 </Card.Body>
 
+
             </Accordion.Collapse>
+            <Card.Footer>
+                <Button onClick={() => {
+                    dispatch(deleteContact(id));
+                    console.log('delete');
+                }}>Delete contact</Button>
+            </Card.Footer>
         </Card>
     </Accordion>
 
@@ -31,7 +41,9 @@ Contact.propTypes = {
     name: PropTypes.string.isRequired,
     address: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
+    id: PropTypes.bool.isRequired,
+
 };
 
 
-export default Contact
+export default connect()(Contact);

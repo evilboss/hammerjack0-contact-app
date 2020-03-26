@@ -1,7 +1,6 @@
 const contacts = (state = [], action) => {
     switch (action.type) {
         case 'ADD_CONTACT':
-            console.log(action);
             return [
                 ...state,
                 {
@@ -15,9 +14,13 @@ const contacts = (state = [], action) => {
                 }
             ];
         case 'TOGGLE_CONTACT':
-            return state.map(todo =>
-                todo.id === action.id ? {...todo, completed: !todo.completed} : todo
+            return state.map(contact =>
+                contact.id === action.id ? {...contact, completed: !contact.completed} : contact
             );
+        case 'DELETE_CONTACT':
+            console.log('Delete Contact');
+            return state.filter(contact => contact.id !== action.id);
+
         default:
             return state
     }

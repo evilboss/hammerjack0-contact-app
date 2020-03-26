@@ -3,6 +3,6 @@ import contacts from './contacts'
 import visibilityFilter from './visibilityFilter'
 
 export default combineReducers({
-    todos: contacts,
+    contacts: contacts,
     visibilityFilter
 })

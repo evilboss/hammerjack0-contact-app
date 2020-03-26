@@ -14,6 +14,12 @@ export const toggleContact = id => ({
     type: 'TOGGLE_CONTACT',
     id
 });
+export const deleteContact = id => {
+    return {
+        type: 'DELETE_CONTACT',
+        id: id
+    }
+};
 
 export const VisibilityFilters = {
     SHOW_ALL: 'SHOW_ALL',

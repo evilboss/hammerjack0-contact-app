@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from './Footer'
 import AddContact from '../containers/AddContact'
-import VisibleTodoList from '../containers/VisibleTodoList'
+import VisibleTodoList from '../containers/VisibleContactList'
 import Header from "./Header";
 import {Col, Container, Row} from "react-bootstrap";
 
