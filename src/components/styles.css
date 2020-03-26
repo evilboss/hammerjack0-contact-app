@@ -13,6 +13,11 @@
 
 
 .card-header{position: relative; cursor: pointer;}
+.card-header .btn-link{
+    position: absolute;
+    right: 0;
+    top: 7px;
+}
 .card-header .fas{
     position: absolute;
     right: 16px;
@@ -26,7 +31,7 @@
 }
 .card-header .action{
     position: absolute;
-    right: 0;
+    right: 60px;
     background: #00bc8c;
     height: 47px;
     width: 47px;
@@ -47,4 +52,15 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
+}
+
+.contacts .card-text:hover .fa-pen{display: inline-block;}
+.contacts .card-text .fa-pen{
+    margin-left: 10px;
+    color: #aaa;
+    cursor: pointer;
+    display: none;
+}
+.contacts .card-text .fa-pen:hover{
+    color: #00bc8c;
 }

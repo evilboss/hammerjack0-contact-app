@@ -45,9 +45,12 @@ const Contact = ({dispatch, onClick, completed, name, address, email, id}) => {
                             <Form.Control type="text" placeholder={email} onBlur={(e) => {
                                 updateContact(e);
                             }}/>
-                            : <span onDoubleClick={() => {
+                            : <span>{email} <i class="fas fa-pen"onClick={() => {
+                                setEditEmail(true);}} title="Add email" /></span>}
+                            
+                            {/* <span onDoubleClick={() => {
                                 setEditEmail(true);
-                            }}>{email ? email : 'double click to add'}</span>}
+                            }}>{email ? email : 'double click to add'}</span>} */}
                         </Card.Text>
                         <Card.Text>
                             Address: {address}
