@@ -10,9 +10,6 @@ const Contact = ({dispatch, onClick, completed, name, address, email, id}) => (
         <Card>
             <Card.Header>
                 {name}
-                <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                    {name}
-                </Accordion.Toggle>
                 <span className="action"
                 onClick={() => {
                     dispatch(deleteContact(id));

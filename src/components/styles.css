@@ -15,7 +15,7 @@
 .card-header{position: relative; cursor: pointer;}
 .card-header .fas{
     position: absolute;
-    right: 20px;
+    right: 16px;
     font-size: 16px;
     top: 50%;
     margin-top: -8px;
@@ -28,8 +28,8 @@
     position: absolute;
     right: 0;
     background: #00bc8c;
-    height: 54px;
-    width: 54px;
+    height: 47px;
+    width: 47px;
     top: 0;
     display: none;
 }
