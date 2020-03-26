@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Contact from './Contact'
-import {Card} from "react-bootstrap";
+import {Badge, Card} from "react-bootstrap";
 
 const ContactList = ({contacts: contacts, toggleContact: toggleContact}) => (
 
     <Card className="contacts">
         <Card.Body>
-            <Card.Title>Contacts</Card.Title>
+            <Card.Title> <Badge variant="success">Contacts: </Badge> </Card.Title>
             {contacts.map(contact => (
                 <Contact key={contact.id} {...contact} onClick={() => toggleContact(contact.id)}/>
             ))}
