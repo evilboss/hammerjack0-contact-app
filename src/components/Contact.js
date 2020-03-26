@@ -6,13 +6,23 @@ import {Accordion, Card, Button, Badge, Form} from "react-bootstrap";
 import {deleteContact, updateContact} from '../actions'
 
 const Contact = ({dispatch, onClick, completed, name, address, email, id}) => {
+    let nameRef, emailRef, addressRef;
+
     let [open, setOpen] = useState(false);
     let [editName, setEditName] = useState(false);
     let [editEmail, setEditEmail] = useState(false);
-    const updateContact = (event) => {
-        console.log('update contact');
-        setEditEmail(false);
+    let [editAddress, setEditAddress] = useState(false);
+
+    const generateContact = () => {
         setEditName(false);
+        setEditEmail(false);
+        setEditAddress(false);
+        dispatch(updateContact({
+            id,
+            name: (nameRef) ? nameRef.value : name,
+            address: (addressRef) ? addressRef.value : address,
+            email: (emailRef) ? emailRef.value : email
+        }));
 
     };
     return (
@@ -20,7 +30,20 @@ const Contact = ({dispatch, onClick, completed, name, address, email, id}) => {
             <Card>
                 <Card.Header>
 
-                    {editName ? <input/> : name}
+                    Contact Name: {editName ?
+                    <Form.Control type="text" placeholder={name} onKeyPress={(event) => {
+                        if (event.key === 'Enter') {
+                            generateContact();
+
+                        }
+                        //
+                    }}
+                                  ref={node => (nameRef = node)}
+
+                    />
+                    : <span>{name} <i class="fas fa-pen" onClick={() => {
+                        setEditName(true);
+                    }} title="Add name"/></span>}
 
 
                     <span className="action"
@@ -42,26 +65,39 @@ const Contact = ({dispatch, onClick, completed, name, address, email, id}) => {
                 <Accordion.Collapse eventKey="0">
                     <Card.Body>
                         <Card.Text>Email : {editEmail ?
-                            <Form.Control type="text" placeholder={email} onBlur={(e) => {
-                                updateContact(e);
-                            }}/>
-                            : <span>{email} <i class="fas fa-pen"onClick={() => {
-                                setEditEmail(true);}} title="Add email" /></span>}
-                            
-                            {/* <span onDoubleClick={() => {
+                            <Form.Control type="text" placeholder={email} onKeyPress={(event) => {
+                                console.log('keypress', event.key);
+                                if (event.key === 'Enter') {
+                                    generateContact();
+
+                                }
+                                //
+                            }}
+                                          ref={node => (emailRef = node)}
+                            />
+                            : <span>{email} <i class="fas fa-pen" onClick={() => {
                                 setEditEmail(true);
-                            }}>{email ? email : 'double click to add'}</span>} */}
+                            }} title="Add email"/></span>}
+
                         </Card.Text>
-                        <Card.Text>
-                            Address: {address}
+                        <Card.Text>Address : {editAddress ?
+                            <Form.Control type="text" placeholder={address} onKeyPress={(event) => {
+                                console.log('keypress', event.key);
+                                if (event.key === 'Enter') {
+                                    generateContact();
+
+                                }
+                                //
+                            }}
+                                          ref={node => (addressRef = node)}
+
+                            />
+                            : <span>{address} <i class="fas fa-pen" onClick={() => {
+                                setEditAddress(true);
+                            }} title="edit Address"/></span>}
+
                         </Card.Text>
                         <Button onClick={() => {
-                            dispatch(updateContact({
-                                id,
-                                name: 'test name',
-                                address: 'test address',
-                                email: 'test email'
-                            }));
                             console.log('update');
                         }}>Update contact</Button>
 
