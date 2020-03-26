@@ -19,12 +19,24 @@
     font-size: 16px;
     top: 50%;
     margin-top: -8px;
+    color: #fff;
+}
+.card-header .fas:hover{
+    opacity: .8
+}
+.card-header .action{
+    position: absolute;
+    right: 0;
+    background: #00bc8c;
+    height: 54px;
+    width: 54px;
+    top: 0;
     display: none;
 }
 .card-header:hover{
     opacity: .8;
 }
-.card-header:hover .fas{
+.card-header:hover .action{
     display: block;
 }
 .contacts .accordion{
