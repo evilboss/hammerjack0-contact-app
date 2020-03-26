@@ -14,6 +14,11 @@ export const toggleContact = id => ({
     type: 'TOGGLE_CONTACT',
     id
 });
+export const updateContact = contact => ({
+    type: 'UPDATE_CONTACT',
+    contact,
+    id: contact.id
+});
 export const deleteContact = id => {
     return {
         type: 'DELETE_CONTACT',

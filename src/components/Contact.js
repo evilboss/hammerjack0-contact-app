@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 
 import {Accordion, Card, Button} from "react-bootstrap";
-import {deleteContact} from '../actions'
+import {deleteContact, updateContact} from '../actions'
 
 const Contact = ({dispatch, onClick, completed, name, address, email, id}) => (
     <Accordion defaultActiveKey="0">
         <Card>
             <Card.Header>
+                {name}
                 <Accordion.Toggle as={Button} variant="link" eventKey="0">
                     {name}
                 </Accordion.Toggle>
@@ -26,6 +27,15 @@ const Contact = ({dispatch, onClick, completed, name, address, email, id}) => (
                     <Card.Text>
                         Address: {address}
                     </Card.Text>
+                    <Button onClick={() => {
+                        dispatch(updateContact({
+                            id,
+                            name: 'test name',
+                            address: 'test address',
+                            email: 'test email'
+                        }));
+                        console.log('update');
+                    }}>Update contact</Button>
 
                 </Card.Body>
 
