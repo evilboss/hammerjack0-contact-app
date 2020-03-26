@@ -9,7 +9,7 @@ import Footer from './Footer'
 import Router from "./Router";
 
 const App = () => (
-    <div>
+    <div className="wrapper">
         <Container fluid>
 
             <Router/>
