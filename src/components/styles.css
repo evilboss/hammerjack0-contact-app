@@ -77,3 +77,6 @@
 }
 .card-header .edit-name .fas:hover{color: #00bc8c;}
 .contacts .card-header:hover .fa-pen{display: inline-block;}
+.contacts.card{
+    min-height: calc(95vh - 71px);
+}

@@ -7,7 +7,7 @@ const AddContact = ({dispatch}) => {
     let name, email, address;
 
     return (
-        <div>
+        <div className="contacts card">
             <Card>
                 <Card.Body>
                     <Card.Title> <Badge variant="success">Add New Contact: </Badge> </Card.Title>
@@ -17,6 +17,7 @@ const AddContact = ({dispatch}) => {
                             e.preventDefault();
                             if (!name.value.trim()) {
                                 return
+
                             }
                             dispatch(addContact({name: name.value, address: address.value, email: email.value}));
                             name.value = '';
