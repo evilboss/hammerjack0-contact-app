@@ -7,13 +7,13 @@ import {Col, Container, Row} from "react-bootstrap";
 import Header from "./Header";
 import Footer from './Footer'
 import Router from "./Router";
+import './styles.css';
 
 const App = () => (
     <div className="wrapper">
         <Container fluid>
 
             <Router/>
-
 
 
         </Container>
